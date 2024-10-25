@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="cda%E8%A1%8C%E4%B8%9A%E6%8E%A2%E7%B4%A2%E7%BB%84workshop1%E5%AD%98%E6%A1%A3">CDA行业探索组Workshop1（存档）</h1>
+<h2 id="%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</h2>
+<ul>
+<li>主题：玩转量化术语：Python实战指南</li>
+<li>2024/10/23，13:30 ~ 15:30</li>
+<li>东中院4-201</li>
+<li>Tutor：Zane Wu， <a href="mailto:Zincwolf@outlook.com">Zincwolf@outlook.com</a></li>
+<li>TA：Yu Wang， <a href="mailto:wangyv123@sjtu.edu.cn">wangyv123@sjtu.edu.cn</a></li>
+</ul>
+<h2 id="%E6%B4%BB%E5%8A%A8%E8%AE%AE%E7%A8%8B">活动议程</h2>
+<ol>
+<li>介绍与开场（13:30 - 13:45）</li>
+<li>量化术语概述（13:45 - 14:15）</li>
+<li>Python实战演示（14:15 - 15:30）</li>
+</ol>
+<h2 id="%E6%89%80%E9%9C%80%E5%87%86%E5%A4%87">所需准备</h2>
+<ul>
+<li>个人笔记本电脑</li>
+<li>安装好<a href="%5Bhttps://%5D(https://www.anaconda.com/)">anaconda</a>，<a href="https://code.visualstudio.com/">vscode</a></li>
+</ul>
+<h2 id="%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">环境配置</h2>
+<h3 id="%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE">手动配置</h3>
+<p>创建环境并安装必要的Python库，命令如下：</p>
+<p><button onclick="copyToClipboard()">一键复制</button></p>
+<script> function copyToClipboard() { const text = `conda create -n workshop1 python=3.10 conda activate workshop1 pip install numpy pandas openpyxl`; navigator.clipboard.writeText(text).then(() => { alert('已复制到剪贴板'); }).catch(err => { console.error('复制失败', err); }); } </script>
+<pre class="hljs"><code><div>    conda create -n workshop1 python=3.10
+    conda activate workshop1
+    pip install numpy pandas openpyxl
+</div></code></pre>
+<h3 id="%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E9%85%8D%E7%BD%AE">通过脚本配置</h3>
+<p>在安装好anaconda的前提下，可通过下述命令直接创建虚拟环境：</p>
+<p><button onclick="copyToClipboard()">一键复制</button></p>
+<script> function copyToClipboard() { const text = `conda env create -f environment.yml conda activate workshop1`; navigator.clipboard.writeText(text).then(() => { alert('已复制到剪贴板'); }).catch(err => { console.error('复制失败', err); }); } </script>
+<pre class="hljs"><code><div>    conda env create -f environment.yml
+    conda activate workshop1
+</div></code></pre>
+<p>或者，点击以下链接下载并运行批处理文件（适用于 Windows 用户）或 Shell 脚本（适用于 Mac 用户）来自动配置环境：</p>
+<ol>
+<li>
+<p><a href="./setup_environment.bat" download>下载并运行批处理文件（Windows）</a></p>
+</li>
+<li>
+<p><a href="./setup_environment.sh" download>下载并运行Shell脚本（Mac）</a></p>
+</li>
+</ol>
+<h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</h2>
+<ul>
+<li><a href="./references/Python%E5%B7%A5%E5%85%B7%E5%85%A5%E9%97%A8%EF%BC%9AVSCode%E5%92%8CAnaconda+v1.0(1)_%E7%BA%AF%E5%9B%BE%E7%89%88.pdf">Python工具入门：VSCode和Anaconda+v1.0(1)_纯图版</a></li>
+<li><a href="https://blog.csdn.net/weixin_43412762/article/details/129599741?sharetype=blogdetail&amp;shareId=129599741&amp;sharerefer=APP&amp;sharesource=2301_81346728&amp;sharefrom=link">Anaconda安装-超详细版(2023) -  CSDN App</a></li>
+<li><a href="https://blog.csdn.net/weixin_60915103/article/details/131617196?sharetype=blogdetail&amp;shareId=131617196&amp;sharerefer=APP&amp;sharesource=2301_81346728&amp;sharefrom=link">vscode安装+配置+使用+调试【保姆级教程】 -  CSDN App</a></li>
+<li><a href="./references/CDA1%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%831.pdf">CDA1配置环境1</a></li>
+<li><a href="./references/wksp1.pdf">wksp1课件（pdf）</a></li>
+</ul>
+<h2 id="%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E">文件说明</h2>
+<ul>
+<li><a href="./data"><code>data</code></a>文件夹中包含本次workshop所需的数据文件;</li>
+<li><a href="./notebook"><code>notebook</code></a>文件夹中<a href="./notebook/cda_lab1.ipynb"><code>cda_lab1.ipynb</code></a>为本次workshop主要使用的代码及课程任务,<a href="./notebook/python_101.ipynb"><code>python_101.ipynb</code></a>则是一些<code>python</code>基础入门语法和数据结构，以供需要的同学自学；</li>
+<li><a href="./references"><code>references</code></a>文件夹包含本次workshop所需的部分参考资料;</li>
+<li><code>environment.yml</code>,<code>setup_environment.bat</code>以及<code>setup_environment.sh</code>均为使用<a href="#%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E9%85%8D%E7%BD%AE">使用脚本配置环境</a>所需.</li>
+</ul>
+<h2 id="%E8%A1%A5%E5%85%85">补充</h2>
+<ul>
+<li>创建环境
+<ul>
+<li>使用本存档的同学以<a href="#%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE">本文档中为准</a>;</li>
+<li>jupyter notebook选择内核时若没有找到创建好的环境, 可以创建本地文件夹并通过code打开后重新选择内核,原因在于vscode必须在确定的项目文件夹中方可创建环境;</li>
+<li>若需在vscode中编写并运行py脚本(即<code>.py</code>文件), 可通过按下<code>Crtl</code>+<code>Shift</code>+<code>P</code>，找到<code>Python: 选择解释器(Python: Select Interpreter)</code>点击并选择创建好的虚拟环境;</li>
+</ul>
+</li>
+<li>修正:自由流通比例 = 样本总股本 / 自由流通量 修改为 自由流通量 / 样本总股本;</li>
+<li>如果追求更高的速度，可以考虑学习汇编语言.</li>
+</ul>
+<details>
+<summary>来自部长的惊喜链接大礼包！</summary>
+<ul>
+<li><a href="https://sme.cuhk.edu.cn/article/2112">量化金融岗位介绍</a></li>
+<li><a href="https://sme.cuhk.edu.cn/article/2119">量化金融求职准备</a></li>
+<li><a href="https://www.thewallstreetquants.com/firm-list">Quant Firm Guide</a></li>
+<li><a href="https://www.csindex.com.cn/#/indices/family/detail?indexCode=000852">中证1000指数 (000852)</a></li>
+<li><a href="https://book.douban.com/subject/35076061/">3小时快学期权（第二版）</a></li>
+<li><a href="https://wallstreetcn.com/articles/3721499#">华尔街见闻：高频量化交易手续费或提升9倍至1元，将挤压部分高频策略空间</a></li>
+<li><a href="https://www.figgie.com">Figgie</a></li>
+<li><a href="https://bigquant.com/wiki/doc/5a695bqm44cb5by55ocn44cb5rex5bqm44cb6zug5lit5bqm77ya5bi46keb6auy6akr5zug5a2q5yk5oyh5qch6yc76l6r-zmH0YGSf6P">BigQuant</a></li>
+</ul>
+</details>
+
+</body>
+</html>
