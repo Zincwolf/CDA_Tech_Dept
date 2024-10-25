@@ -25,10 +25,6 @@
 
 创建环境并安装必要的Python库，命令如下：
 
-<button onclick="copyToClipboard()">一键复制</button>
-
-<script> function copyToClipboard() { const text = `conda create -n workshop1 python=3.10 conda activate workshop1 pip install numpy pandas openpyxl`; navigator.clipboard.writeText(text).then(() => { alert('已复制到剪贴板'); }).catch(err => { console.error('复制失败', err); }); } </script>
-
 ```bash
     conda create -n workshop1 python=3.10
     conda activate workshop1
@@ -38,10 +34,6 @@
 ### 通过脚本配置
 
 在安装好anaconda的前提下，可通过下述命令直接创建虚拟环境：
-
-<button onclick="copyToClipboard()">一键复制</button>
-
-<script> function copyToClipboard() { const text = `conda env create -f environment.yml conda activate workshop1`; navigator.clipboard.writeText(text).then(() => { alert('已复制到剪贴板'); }).catch(err => { console.error('复制失败', err); }); } </script>
 
 ```bash
     conda env create -f environment.yml
