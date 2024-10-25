@@ -57,7 +57,7 @@
 ## 文件说明
 
 - [`data`](./data)文件夹中包含本次workshop所需的数据文件;
-- [`notebook`](./notebook)文件夹中[`cda_lab1.ipynb`](./notebook/cda_lab1.ipynb)为本次workshop主要使用的代码及课程任务,[`python_101.ipynb`](./notebook/python_101.ipynb)则是一些`python`基础入门语法和数据结构，以供需要的同学自学；
+- [`notebook`](./notebook)文件夹中[`cda_lab1.ipynb`](./notebook/cda_lab1.ipynb)为本次workshop主要使用的代码及课程任务（为保护版权，上传至github的版本中已忽略此文件，如有需要，请联系Zane Wu， [Zincwolf@outlook.com](mailto:Zincwolf@outlook.com)）,[`python_101.ipynb`](./notebook/python_101.ipynb)则是一些`python`基础入门语法和数据结构，以供需要的同学自学；
 - [`references`](./references)文件夹包含本次workshop所需的部分参考资料;
 - `environment.yml`,`setup_environment.bat`以及`setup_environment.sh`均为使用[使用脚本配置环境](#通过脚本配置)所需.
 
